@@ -7,15 +7,25 @@ object ReadCsvFile {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().appName("Read Csv File").master("local[1]").getOrCreate()
 
-    val file_paths = List("/Users/dineshvarmaguduru/IdeaProjects/Apache-Spark-Demo/src/main/scala/atomic/engineering/csv_files/data.csv",
-      "/Users/dineshvarmaguduru/IdeaProjects/Apache-Spark-Demo/src/main/scala/atomic/engineering/csv_files/data1.csv")
+    val file_path = "/path1/data.csv"
 
-    val folder = "/Users/dineshvarmaguduru/IdeaProjects/Apache-Spark-Demo/src/main/scala/atomic/engineering/csv_files"
+    val file_paths = List("/path1/data.csv",
+                          "/path2/data1.csv")
+
+    val folder = "/folder/path"
 
     val options = Map("header" -> "true",
                       "delimiter" -> "|",
                       "lineSep" -> "\n",
                       "maxColumns" -> "4")
+
+    /*
+    Read Single File
+    val csvDF = spark.read
+      .options(options)
+      .csv(path = file_paths)
+    */
+
     /*
     Read Multiple Files
     val csvDF = spark.read
