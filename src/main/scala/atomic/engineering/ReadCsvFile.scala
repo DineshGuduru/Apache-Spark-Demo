@@ -7,12 +7,12 @@ object ReadCsvFile {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().appName("Read Csv File").master("local[1]").getOrCreate()
 
-    val file_path = "/path1/data.csv"
+    val file_path = "src/main/scala/atomic/data/csv_files/data.csv"
 
-    val file_paths = List("/path1/data.csv",
-                          "/path2/data1.csv")
+    val file_paths = List("src/main/scala/atomic/data/csv_files/data.csv",
+                          "src/main/scala/atomic/data/csv_files/data1.csv")
 
-    val folder = "/folder/path"
+    val folder = "src/main/scala/atomic/data/csv_files"
 
     val options = Map("header" -> "true",
                       "delimiter" -> "|",
