@@ -10,11 +10,11 @@ object WriteToJson {
     import spark.implicits._
 
     val data = Seq(
-      (12, "Alice", "20-09-2004"),
-      (13, "Bob", "20-08-1998"),
-      (14, "Charlie", "10-09-2001"),
-      (15, "Danny", "02-09-1990")
-    ).toDF("id", "name", "dob")
+      (12, "Alice", "20-09-2004", 20),
+      (13, "Bob", "20-08-1998", 26),
+      (14, "Charlie", "10-09-2001", 23),
+      (15, "Danny", "02-09-1990", 34)
+    ).toDF("id", "name", "dob", "age")
 
 //    data.show()
 
